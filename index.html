@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科研导航 | 智能研究助手</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="theme-switch" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </div>
+
+        <header class="header">
+            <h1>智能科研导航系统</h1>
+            
+            <div class="header-info">
+                <div class="calendar">
+                    <span id="current-date"></span>
+                    <span id="current-time"></span>
+                </div>
+                <div class="weather">
+                    <span id="weather-icon">☀️</span>
+                    <span id="weather-temp">--°C</span>
+                    <span id="weather-city">加载中...</span>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <form action="https://www.baidu.com/s" target="_blank">
+                    <input type="text" name="wd" class="search-input" placeholder="输入搜索内容...">
+                    <button type="submit" class="search-button">搜索</button>
+                </form>
+            </div>
+        </header>
+
+        <div id="categories"></div>
+    </div>
+
+    <!-- 待办事项模块 -->
+    <div class="todo-container">
+        <h2 class="todo-title">待办事项</h2>
+        <div class="countdown-input-container"> <!-- 使用倒计时模块的输入容器样式 -->
+            <input type="text" id="todo-input" placeholder="输入待办事项..." class="countdown-input">
+            <input type="date" id="todo-date" class="countdown-date"> <!-- 修改为date类型 -->
+            <button onclick="addTodo()" class="countdown-add-button">添加</button>
+        </div>
+        <ul id="todo-list" class="countdown-list"></ul> <!-- 使用倒计时列表样式 -->
+    </div>
+
+    <!-- 倒计时模块 -->
+    <div class="countdown-container">
+        <h2 class="countdown-title">倒计时</h2>
+        <div class="countdown-input-container">
+            <input type="text" id="countdown-event" placeholder="输入事件名称..." class="countdown-input">
+            <input type="date" id="countdown-date" class="countdown-date">
+            <button onclick="addCountdown()" class="countdown-add-button">添加</button>
+        </div>
+        <ul id="countdown-list" class="countdown-list"></ul>
+    </div>
+    
+        <!-- "今天吃什么"模块 -->
+        <div class="food-container">
+            <h2 class="food-title">今天吃什么？</h2>
+            <div class="food-content">
+                <div id="food-result" class="food-result">点击按钮开始选择</div>
+                <button onclick="recommendFood()" class="food-button">
+                    <i class="fas fa-utensils"></i> 随机推荐
+                </button>
+            </div>
+        </div>
+
+    <!-- 底边栏 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Copyright © 2025 CUI GUOSHUN. All rights reserved.</p>
+            <p>Version 1.1.0 | 智能科研导航系统</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
